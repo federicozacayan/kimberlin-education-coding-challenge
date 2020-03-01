@@ -2,20 +2,59 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Support\Facades\DB;
+
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
+    public function testRegister()
     {
-        $response = $this->get('/');
+        DB::beginTransaction();
+        $response = $this->json('POST', '/api/register', [
+            'name' => 'tdd',
+            'email' => 'tdd@mail.com',
+            'password' => 'secret',
+            'c_password' => 'secret',
+        ]);
+        DB::rollback();
+        $response->assertStatus(201);
+    }
 
-        $response->assertStatus(200);
+
+    public function testLoginFail()
+    {
+        DB::beginTransaction();
+        $response = $this->json('POST', '/api/register', [
+            'name' => 'tdd',
+            'email' => 'tdd@mail.com',
+            'password' => 'secret',
+            'c_password' => 'secret',
+        ]);
+
+        $response2 = $this->json('POST', '/api/login', [
+            'email' => 'tdd@mail.com',
+            'password' => 'wrongPassword'
+        ]);
+        DB::rollback();
+        $response2->assertStatus(401);
+    }
+
+    public function testLogin()
+    {
+        DB::beginTransaction();
+        $response = $this->json('POST', '/api/register', [
+            'name' => 'tdd',
+            'email' => 'tdd@mail.com',
+            'password' => 'secret',
+            'c_password' => 'secret',
+        ]);
+
+        $response2 = $this->json('POST', '/api/login', [
+            'email' => 'tdd@mail.com',
+            'password' => 'secret'
+        ]);
+        DB::rollback();
+        $response2->assertStatus(200);
     }
 }

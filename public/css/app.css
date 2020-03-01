@@ -1,0 +1,342 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.message {
+  display: none;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.back {
+  background-color: #808080;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.login {
+  box-sizing: border-box;
+  width: 35rem;
+  margin: auto;
+  margin-top: 10rem;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-flow: column;
+}
+
+.login h1 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.login input[type=text],
+.login input[type=password] {
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 1rem;
+  font-weight: bolder;
+  border: 1px solid #b3b3b3;
+}
+
+.login input[type=button] {
+  align-self: flex-end;
+  background-color: #4f4f4f;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 0.3rem;
+  font-weight: bolder;
+  margin-top: 1rem;
+}
+
+.search {
+  width: 75rem;
+  margin: auto;
+  position: relative;
+}
+
+.search input[type=text],
+.search select {
+  width: 18rem;
+  height: 3rem;
+  margin: 0.7rem auto;
+  padding-left: 0.5rem;
+  font-weight: bolder;
+  border: 2px solid #b3b3b3;
+  background-color: white;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  vertical-align: top;
+  color: #858585;
+  font-weight: lighter;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search input[type=text] {
+    width: 100%;
+  }
+}
+
+.search select {
+  -webkit-appearance: none;
+  /* for webkit browsers */
+  -moz-appearance: none;
+  /* for firefox */
+  appearance: none;
+  /* for modern browsers */
+}
+
+.search .select {
+  display: inline-block;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search .select {
+    margin-left: 0rem;
+    width: 100%;
+  }
+}
+
+.search .select:after {
+  content: "\25BC";
+  top: 1.2rem;
+  right: 0.5rem;
+  z-index: 1;
+  text-align: center;
+  pointer-events: none;
+  position: absolute;
+  font-size: 1.5rem;
+  color: #858585;
+}
+
+.search .cards {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search .cards {
+    grid-template-columns: 100%;
+  }
+}
+
+.search .cards .card h1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.1rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.search .cards .card .flex {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 46% 46%;
+  grid-column-gap: 8%;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search .cards .card .flex {
+    grid-template-columns: 100%;
+  }
+}
+
+.search .cards .card .flex > div {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.search .cards .card .flex > div .meta {
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search .cards .card .flex > div .meta {
+    padding-top: 1rem;
+  }
+}
+
+.search .cards .card .flex > div .meta div {
+  margin-bottom: 1rem;
+}
+
+.search .cards .card .flex > div input[type=button] {
+  background-color: #4f4f4f;
+  color: white;
+  border: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.3rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.search .cards .card .flex .img {
+  width: 100%;
+  height: 14rem;
+  overflow: hidden;
+}
+
+.search .cards .card .flex .img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.description {
+  width: 75rem;
+  margin: auto;
+}
+
+.description .cards {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .description .cards {
+    grid-template-columns: 100%;
+  }
+}
+
+.description .cards .card {
+  padding: 1rem;
+}
+
+.description .cards .card h1 {
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.description .cards .card .img {
+  width: 100%;
+  height: 14rem;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+  .description .cards .card .img {
+    height: auto;
+  }
+}
+
+.description .cards .card .img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.description .cards .card p {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.description .cards .flex {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.description .cards .flex .meta {
+  font-size: 1.3rem;
+}
+
+.description .cards .flex .meta div {
+  margin-bottom: 1rem;
+}
+
+.description .cards .flex select {
+  width: 100%;
+  height: 3rem;
+  margin: 0.7rem auto;
+  padding-left: 0.5rem;
+  font-weight: bolder;
+  border: 2px solid #b3b3b3;
+  background-color: white;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  vertical-align: top;
+  color: #858585;
+  font-weight: lighter;
+}
+
+.description .cards .flex select {
+  -webkit-appearance: none;
+  /* for webkit browsers */
+  -moz-appearance: none;
+  /* for firefox */
+  appearance: none;
+  /* for modern browsers */
+}
+
+.description .cards .flex .select {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+
+.description .cards .flex .select:after {
+  content: "\25BC";
+  top: 1.2rem;
+  right: 1rem;
+  z-index: 1;
+  text-align: center;
+  pointer-events: none;
+  font-size: 1.5rem;
+  color: #858585;
+  height: 0px;
+  position: absolute;
+}
+
+.description .cards .flex input[type=button] {
+  background-color: #4f4f4f;
+  color: white;
+  border: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.3rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 4px 4px 8rem rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
