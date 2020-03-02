@@ -89,5 +89,12 @@ Unit test.
 phpunit
 ```
 
+Test User to login.
+
+```shell script
+Email: test@test.com
+Password: password
+```
+
 Note: it is responsive design.
 

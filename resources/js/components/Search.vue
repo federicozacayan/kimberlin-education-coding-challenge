@@ -18,7 +18,7 @@
                 <h1>{{ event.title }}</h1>
                 <div class="flex">
                     <div class="img">
-                        <img v-bind:src="event.image" title="title">
+                        <img v-bind:src="event.image" v-bind:title="event.title">
                     </div>
                     <div>
                         <div class="meta">
